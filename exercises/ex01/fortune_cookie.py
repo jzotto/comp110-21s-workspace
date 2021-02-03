@@ -15,7 +15,7 @@ from random import randint
 # Begin your solution here...
 
 print("Your fortune cookie says...")
-fortune = randint(0, 5)
+fortune = randint(0, 4)
 if fortune == 0:
     print("Speak your mind, even if your voice shakes.")
 else:
@@ -30,8 +30,6 @@ else:
             else:
                 if fortune == 4:
                     print("Never give up. Never surrender.")
-                else:
-                    if fortune == 5:
-                        print("Easter is coming.")
+
 
 print("Now, go spread positive vibes!")
