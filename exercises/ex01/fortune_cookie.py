@@ -13,7 +13,6 @@ from random import randint
 
 
 # Begin your solution here...
-#hello
 
 
 print("Your fortune cookie says...")
@@ -32,6 +31,5 @@ else:
             else:
                 if fortune == 4:
                     print("Never give up. Never surrender.")
-
 
 print("Now, go spread positive vibes!")
