@@ -18,3 +18,20 @@ from datetime import timedelta
 
 
 # Begin your solution here...
+today: datetime = datetime.today()
+
+pop: int = int(input("Population: "))
+doses_admin: int = int(input("Doses administered: "))
+doses_per_day: int = int(input("Doses per day: "))
+target: int = int(input("Target percent vaccinated: "))
+
+percent_to_be_vac: int = int(pop * ((target / 100)))
+ppl_left_to_vac: int = int(percent_to_be_vac - (doses_admin) / 2)
+doses_need: int = int(ppl_left_to_vac * 2)
+days_to_goal: int = int(doses_need / doses_per_day)
+
+
+days: timedelta = timedelta((days_to_goal))
+future: datetime = today + days
+
+print("We will reach "  + str(target)+ "%" + " in " + str(days_to_goal) +  " days, " "which falls on " + (future.strftime("%B %d, %Y"))+".")
