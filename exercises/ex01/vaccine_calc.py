@@ -16,7 +16,6 @@ from datetime import datetime
 # Official Documentation: https://docs.python.org/3/library/datetime.html#datetime.timedelta
 from datetime import timedelta
 
-
 # Begin your solution here...
 today: datetime = datetime.today()
 
@@ -34,4 +33,5 @@ days_to_goal: int = int(doses_need / doses_per_day)
 days: timedelta = timedelta((days_to_goal))
 future: datetime = today + days
 
-print("We will reach "  + str(target)+ "%" + " in " + str(days_to_goal) +  " days, " "which falls on " + (future.strftime("%B %d, %Y"))+".")
+print("We will reach " + str(target) + "% vaccination" + " in " + str(days_to_goal) + " days, " "which falls on ")
+print((future.strftime("%B %d, %Y")) + ".")
