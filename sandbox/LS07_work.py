@@ -36,3 +36,5 @@ ppl_left: int = int(pop - (doses_admin / 2))
 doses_need: int = int(ppl_left * 2)
 days_to_goal: int = int(doses_need / doses_per_day)
 percent_vac: int = int(pop * (1 - (target / 100)))
+
+
