@@ -11,8 +11,10 @@ def main() -> None:
     print(fortune_cookie())
     print("Now, go spread positive vibes!")
 
-def fortune_cookie():
-    fortune: int = randint(1, 400)
+
+def fortune_cookie() -> str:
+    """Returns a fortune."""
+    fortune = randint(1, 400)
     if fortune < 100:
         return "Make peace with the universe."
     else:
@@ -24,7 +26,7 @@ def fortune_cookie():
             else:
                 if fortune < 400: 
                     return "Thank the gods this worked."
-    return fortune
+    return "fortune"
     
 
 # Python Idiom for "starting" the program when run as a module.
