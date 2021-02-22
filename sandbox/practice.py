@@ -1,8 +1,6 @@
 """This is an interactive UNC basketball game program based off of a game from Feb 8th, 2018."""
 
-
 from random import randint
-
 
 def main() -> None:
     """Entrypoint of program."""
@@ -11,8 +9,7 @@ def main() -> None:
     print(greet())
     print(choice1())
     print(choice2())
-    print(choice3(points))
-    print(choice4())
+    print(choice3())
     print(end())
     global player
     EMOJI = "\U0001F622 \U0001F627 \U0001F973 \U0001F40F \U000026F9 \U0001F93E \U0001F3C0"
@@ -26,7 +23,9 @@ def greet() -> None:
     print("We need your help to win.")
     print("Make the right choices and we WILL rush Franklin tonight!!\n")
     player = input("What is your name? ")
-    return(f"Hello { player }! Here's the ball, get on the court! \U0001F3C0 \n") 
+    return(f"Hello { player }! Here's the ball, get on the court! \U0001F3C0 \n")
+    
+    
 
 
 def choice1()-> None:
@@ -46,7 +45,7 @@ def choice1()-> None:
         else:
             if choice1 == "throw the ball to Ramses":
                 points = points + 0
-                print(f"Ramses is not on the team!? OH NO! You caused a turnover. Coach Williams is calling you. \U0001F627 Get on the bench.\n")
+                print(f"Ramses is not on the team!? OH NO! You caused a turnover. Coach Williams is calling you \U0001F627. Get on the bench.\n")
                 print(f"Your game is over champ, better luck next time { player }.")
                 print(f"You scored { points } points.")
                 start_over = input( "Would you like to play again? Y or N ? \n")
@@ -57,11 +56,12 @@ def choice1()-> None:
                         quit()
     
 
+
 def choice2() -> str:
     """Returns a random choice."""
     global player
     global points
-    print(f"You are playing a great game { player }! Keep it up!!")
+    print(f"You are playing a great game { player }! Keep it up!! \n")
     choice2 = randint(1, 400)
     if choice2 < 100:
         points = points + 3
@@ -80,22 +80,7 @@ def choice2() -> str:
                     return "Timeout! Drink some water, you are playing a great game. \n"
     return choice2
 
-def choice3(points:int)-> int:
-    global player
-    if points == 5:
-        points = points + 100
-        return(f"We are falling behind. { player }, we need you to score. \n")
-    else:
-        if points == 6:
-            points = points + 100
-            return("Marvin Bagley loses the ball out of bounds. Cameron Johnson passes to you for an easy layup. \n")
-        else:
-            points = points + 100
-            return("You dribble behind your back and nearly break Grayson Allen's ankle! \n")
-    return points
-
-
-def choice4()-> None:
+def choice3()-> None:
     """Returns a final choice."""
     global player
     global points
@@ -114,13 +99,22 @@ def choice4()-> None:
                 print("Good foul. You stopped the clock. Allen misses, you rebound and throw to Platek down the court, score!! \n")
     return(f"You scored { points } points { player }.")
     
+    
+
 
 def end()-> None:
     global player
     global points
+    
     print(f"Carolina Victory! 82-78! Awesome job { player }. What are you still doing here? Let's go to Franklin!! \U0001F973 \U0001F40F")
     quit()
     
+
+
+
+
+
+
 
 if __name__ == "__main__":
     main()   
