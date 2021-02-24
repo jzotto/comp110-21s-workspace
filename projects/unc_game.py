@@ -12,6 +12,7 @@ def main() -> None:
     print(choice1())
     print(choice2())
     print(choice3(points))
+    print(loop())
     print(choice4())
     print(end())
     global player
@@ -37,15 +38,15 @@ def choice1()-> None:
     global player
     choice1 = input("Shoot a three or pass to Luke Maye or throw the ball to Ramses? ")
     if choice1 == "Shoot a three":
-        points = points + 1
-        return(f"You missed \U0001F622. Duke rebounds. RUN back { player }!")
+        points = points + 2
+        return(f"You missed \U0001F622. Duke rebounds. RUN back { player }! \n")
     else:
         if choice1 == "pass to Luke Maye":
-            points = points + 2
-            return("Score! Up two points.")
+            points = points + 3
+            return("Score! Up two points. \n")
         else:
             if choice1 == "throw the ball to Ramses":
-                points = points + 0
+                points = points + 1
                 print(f"Ramses is not on the team!? OH NO! You caused a turnover. Coach Williams is calling you. \U0001F627 Get on the bench.\n")
                 print(f"Your game is over champ, better luck next time { player }.")
                 print(f"You scored { points } points.")
@@ -83,20 +84,32 @@ def choice2() -> str:
 def choice3(points:int)-> int:
     global player
     if points == 5:
-        points = points + 100
+        points += 100
         return(f"We are falling behind. { player }, we need you to score. \n")
     else:
         if points == 6:
-            points = points + 100
+            points += 100
             return("Marvin Bagley loses the ball out of bounds. Cameron Johnson passes to you for an easy layup. \n")
         else:
-            points = points + 100
+            points += 100
             return("You dribble behind your back and nearly break Grayson Allen's ankle! \n")
     return points
 
+def loop()-> None:
+    """This is a loop."""
+    global points
+    global player
+    while input("Pass to Platek or pass to B-Rob? ") == "Pass to Platek":
+        points += 3
+        print(f"Platek is blocked! Recover {player}, find an opening! You have scored {points} points so far! \n")
+    print("Nice pass, B-Rob makes a three!")
+    points += 3
+    print(f"You have scored {points} points so far!")
+    return("Keep it up, hotshot! \n")
+    
 
 def choice4()-> None:
-    """Returns a final choice."""
+    """Returns a final choice. Additional Adventuring Function."""
     global player
     global points
     print(f"We have two minutes left in the second half. It all comes down to this. We need you { player }! Play smart.")
