@@ -2,7 +2,7 @@
 
 count: int = 0
 while input("Do you need more love? yes/no - ") == "yes":
-    #Body block of while loop is evaluated
+    # Body block of while loop is evaluated
     #when the thest expression is truw
     print("I love you!")
     count += 1
