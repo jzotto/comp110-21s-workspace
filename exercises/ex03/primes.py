@@ -12,7 +12,9 @@ def main() -> None:
     print(is_prime(6))
     print(is_prime(2))
     print(is_prime(99))
+    print(is_prime(4))
     print(list_primes(3, 7))
+    print(list_primes(10, 20))
     
 
 def is_prime(x:int) -> bool:
@@ -21,20 +23,23 @@ def is_prime(x:int) -> bool:
         return False 
     if x == 2:
         return True
-    i = 3
+    i = 2
     while i <= (x // 2):
         if  x % i == 0:  
             return False
         i += 1
     return True
     
-def list_primes(y: int, z: int) -> list[int]:
-    for i in range(y,z+1):
-        if is_prime (i):
-            print(i, end=" ")
-    return []
-    
 
+def list_primes(y: int, z: int) -> list[int]:
+    """List range of prime numbers."""
+    for i in range(y, z):
+        if is_prime (i) == True:
+            print([i])
+    return list_primes
+    
+# How can I get the numbers on the same line with commas?
+# What do I need to return?
 
 if __name__ == "__main__":
     main()

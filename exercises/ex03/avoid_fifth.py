@@ -10,12 +10,19 @@ def main() -> None:
     print(avoid_fifth("hello"))
     print(avoid_fifth("The sentence we have here possesses E's galore!"))
 
-i: int = 0
+
 def avoid_fifth(x: str) -> str:
-    letter_e = ["e", "E"]
-    empty_list: list[str] = []
-    while  i < len(empty_list) 
-        if
+    """This function will remove the character "e" or "E" from a string."""
+    i: int = 0
+    new_list: list[str] = []
+    while  i < len(new_list):
+        if i == "e" or "E":
+           new_list.pop(i)
+        else:
+            new_list.append(i)
+            i += 1
+    return new_list
+
     
 
 
