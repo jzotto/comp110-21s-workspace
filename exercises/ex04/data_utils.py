@@ -21,7 +21,7 @@ def read_csv_rows(csv_file: str) -> list[dict[str, str]]:
 
 
 # TODO: Define the other functions here.
-def column_values(table: list[dict[str,str]], subject_age: str) -> list[str]:
+def column_values(table: list[dict[str, str]], subject_age: str) -> list[str]:
     """Returns subject_age column values."""
     column_values: list[str, str] = []
 
@@ -32,10 +32,40 @@ def column_values(table: list[dict[str,str]], subject_age: str) -> list[str]:
 
 def columnar(table: list[dict[str, str]]) -> dict[str, list[str]]:
     """Transforming a table."""
-    empty_dict: dict[str,str] = []
+    empty_dict: dict[str, list[str]] = []
+    list1: list[str, str] = []
     for i in table:
-        column_values.append(str(row[i]))
-        if i in column_values:
-            empty_dict.append(str(row[i]))
-    
+        list1 = column_values(table, i)
+        empty_dict: dict[column_values] = i
     return empty_dict
+
+
+def head(table1: dict[str, list[str]], N: int) -> dict[str, list[str]]:
+    """Making a table."""
+    empty_dict1: dict[str, list[str]] = []
+    if N > len(table1):
+        N = len(table1)
+    for col in table1:
+        list2: list[str] = []
+        for i in range(N):
+            list2.append(table1[col][i])
+        empty_dict1[col] = list2
+    return empty_dict1
+
+
+def select(table2: dict[str, list[str]], list3: list[str]) -> dict[str, list[str]]:
+    """Select."""
+    empty_dict2: dict[str, list[str]] = []
+    for col in list3:
+        empty_dict2[col] = table2[col]
+    return empty_dict2
+
+
+#def count(values: list[str]) -> dict[str, int]
+   # """Counting the frequency of values."""
+    #empty_dict3: dict[str, int] = 0
+   # for i in values:
+       # if i in empty_dict3:
+
+
+    #return empty_dict3
